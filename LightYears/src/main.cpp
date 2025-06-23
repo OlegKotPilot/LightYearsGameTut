@@ -1,10 +1,13 @@
 #include <iostream>
-#include <string>
-using namespace std;
+#include <memory>
+#include <SFML/Graphics.hpp>
+
+#include "framework/Application.h"
 
 int main() {
-	string str = "Hello, World!";
-	cout << str << endl;
+	//allowcating on the heap to avoid stack overflow issues
+	ly::Application* app = new ly::Application();
+	app->Run();
 
 	return 0;
 }
