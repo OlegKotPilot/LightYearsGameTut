@@ -4,6 +4,9 @@
 int main()
 {
 	ly::Application* app = ly::GetApplication();
+
 	app->Run();
 	delete app;
+
+	return 0;
 }
