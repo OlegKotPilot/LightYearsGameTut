@@ -8,9 +8,13 @@ namespace ly
 	public:
 		Application();
 		void Run();
+
 	private:
-		void Application::Tick(float DeltaTime);
-		void Render();
+		void TickInternal(float deltaTime);
+		void RenderInternal();
+
+		virtual void Render();
+		virtual void Tick(float deltaTime);
 
 		sf::RenderWindow mWindow;
 		float mTargetFrameRate;

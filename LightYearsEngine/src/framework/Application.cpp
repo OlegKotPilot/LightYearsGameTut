@@ -29,18 +29,38 @@ namespace ly
 			{
 				// Update Logic Here
 				accumulatedTime -= targetDeltaTime;
-				Tick(targetDeltaTime);
-				Render();
+				TickInternal(targetDeltaTime);
+				RenderInternal();
 			}
+			std::cout << "Tick at frame rate: " << 1.0f / targetDeltaTime << " FPS" << std::endl;
 		}
 	}
-	void Application::Tick(float deltaTime)
+	void Application::TickInternal(float deltaTime)
 	{
-		std::cout << "Tick at frame rate: " << 1.0f / deltaTime << " FPS" << std::endl;
+		Tick(deltaTime);
+	}
+
+	void Application::RenderInternal()
+	{
+		mWindow.clear();
+
+		Render();
+
+		mWindow.display();
 	}
 
 	void Application::Render()
 	{
+		sf::CircleShape rect(50.f);
+		rect.setFillColor(sf::Color::Green);
+		rect.setOrigin(50.f, 50.f);
+		rect.setPosition(mWindow.getSize().x / 2.f, mWindow.getSize().y / 2.f);
+		mWindow.draw(rect);
+	}
+
+	void Application::Tick(float deltaTime)
+	{
+	
 	}
 }
 
