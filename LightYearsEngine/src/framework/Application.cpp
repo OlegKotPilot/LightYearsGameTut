@@ -1,5 +1,5 @@
-#include <iostream>
 #include "framework/Application.h"
+#include "framework/Core.h"
 
 namespace ly
 {
@@ -24,7 +24,8 @@ namespace ly
 				if (event.type == sf::Event::EventType::Closed)
 					mWindow.close();
 			}
-			accumulatedTime += mTickClock.restart().asSeconds();
+			float frameDeltaTime = mTickClock.restart().asSeconds();
+			accumulatedTime += frameDeltaTime;
 			while (accumulatedTime > targetDeltaTime)
 			{
 				// Update Logic Here
@@ -32,7 +33,7 @@ namespace ly
 				TickInternal(targetDeltaTime);
 				RenderInternal();
 			}
-			std::cout << "Tick at frame rate: " << 1.0f / targetDeltaTime << " FPS" << std::endl;
+			LOG("Tick at frame rate: %f", 1.0f / frameDeltaTime);
 		}
 	}
 	void Application::TickInternal(float deltaTime)
