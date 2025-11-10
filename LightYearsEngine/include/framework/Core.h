@@ -1,9 +1,11 @@
+#pragma once
+
 #include <stdio.h>
 #include <memory>
 #include <map>
 #include <unordered_map>
 
-namespace lu
+namespace ly
 {
 	template<typename T>
 	using unique = std::unique_ptr<T>;
