@@ -8,7 +8,6 @@ namespace ly
 	public:
 		Application();
 		void Run();
-
 	private:
 		void TickInternal(float deltaTime);
 		virtual void Tick(float deltaTime);
@@ -19,6 +18,4 @@ namespace ly
 		float mTargetFrameRate;
 		sf::Clock mTickClock;
 	};
-
-	Application* GetApplication();
 }

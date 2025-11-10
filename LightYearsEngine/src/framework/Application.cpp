@@ -8,7 +8,7 @@ namespace ly
 		mTargetFrameRate{ 60.0f },
 		mTickClock{}
 	{
-		//sf::Window window();
+		sf::Window window();
 	}
 	void Application::Run()
 	{
