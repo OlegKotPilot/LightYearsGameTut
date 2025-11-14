@@ -34,7 +34,10 @@ namespace ly
 	{
 		shared<WorldType> newWorld{ new WorldType{this} };
 		currentWorld = newWorld;
+<<<<<<< HEAD
 		currentWorld->BeginPlayInternal();
+=======
+>>>>>>> 96c2af684e3373e87e301356b5a14110911155ae
 		return newWorld;
 	}
 }

@@ -44,6 +44,10 @@ namespace ly
 
 		if (currentWorld)
 		{
+<<<<<<< HEAD
+=======
+			currentWorld->BeginPlayInternal();
+>>>>>>> 96c2af684e3373e87e301356b5a14110911155ae
 			currentWorld->TickInternal(deltaTime);
 		}
 	}
