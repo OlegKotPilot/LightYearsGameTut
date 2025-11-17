@@ -1,5 +1,5 @@
-#include <iostream>
 #include "framework/Application.h"
+#include "framework/Core.h"
 
 namespace ly
 {
@@ -35,7 +35,8 @@ namespace ly
 				TickInternal(targetDeltaTime);
 				RenderInternal();
 			}
-			std::cout << "Ticking at framerate: " << 1.f / frameDeltaTime << "fps." << std::endl;
+			
+			LOG("Ticking at framerate: %.1f fps.", 1.f / frameDeltaTime);
 		}
 	}
 
@@ -49,16 +50,16 @@ namespace ly
 		
 	}
 
-	void Application::Render()
+	void Application::RenderInternal()
 	{
 		mWindow.clear();
 
-		RenderInternal();
-		
+		Render();
+
 		mWindow.display();
 	}
 
-	void Application::RenderInternal()
+	void Application::Render()
 	{
 		sf::CircleShape rect{ 50 };
 		rect.setFillColor(sf::Color::Green);
@@ -67,4 +68,5 @@ namespace ly
 
 		mWindow.draw(rect);
 	}
+
 }
