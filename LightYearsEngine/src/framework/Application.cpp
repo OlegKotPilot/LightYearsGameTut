@@ -48,7 +48,6 @@ namespace ly
 
 		if (currentWorld)
 		{
-			currentWorld->BeginPlayInternal();
 			currentWorld->TickInternal(deltaTime);
 		}
 	}
