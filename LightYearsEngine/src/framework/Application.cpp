@@ -4,13 +4,12 @@
 
 namespace ly
 {
-	Application::Application()
-		: mWindow{ sf::VideoMode{720, 900}, "My_Window" },
-		mTargetFrameRate{ 60.f },
-		mTickClock{},
-		currentWorld{ nullptr }
+	Application::Application(unsigned int windowWidth, unsigned int windowHeight, const std::string& title, sf::Uint32 style)
+		: mWindow{ sf::VideoMode{windowWidth, windowHeight}, title, style },
+			mTargetFrameRate{ 60.f },
+			mTickClock{},
+			currentWorld{ nullptr }
 	{
-
 	}
 
 	void Application::Run()
@@ -68,12 +67,10 @@ namespace ly
 
 	void Application::Render()
 	{
-		sf::CircleShape rect{ 50 };
-		rect.setFillColor(sf::Color::Green);
-		rect.setOrigin(50, 50);
-		rect.setPosition(mWindow.getSize().x / 2.f, mWindow.getSize().y / 2.f);
-
-		mWindow.draw(rect);
+		if (currentWorld)
+		{
+			currentWorld->Render(mWindow);
+		}
 	}
 
 }
