@@ -16,7 +16,8 @@ namespace ly
 		weak<World> newWorld = LoadWorld<World>();
 		newWorld.lock()->SpawnActor<Actor>();
 		actorToDestroy =  newWorld.lock()->SpawnActor<Actor>();
-		actorToDestroy.lock()->SetTexture("C:/Users/OLEGIS/STUDY/UDEMY/LearnCppAndMakeAGameFromScratch04/Projects1/LightYearsGame/assets/SpaceShooterRedux/PNG/playerShip1_blue.png");
+		//actorToDestroy.lock()->SetTexture("C:/Users/OLEGIS/STUDY/UDEMY/LearnCppAndMakeAGameFromScratch04/Projects1/LightYearsGame/assets/SpaceShooterRedux/PNG/playerShip1_blue.png");
+		actorToDestroy.lock()->SetTexture("C:/Users/olegi/Documents/STUDY/UDEMY/4_LearnCppAndMakeAGameFromScratch/Projects1/LightYears/LightYearsGame/assets/SpaceShooterRedux/PNG/playerShip1_blue.png");
 		counter = 0;
 	}
 
