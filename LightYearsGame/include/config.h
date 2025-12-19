@@ -4,8 +4,8 @@
 std::string GetResourceDir()
 {
 #ifdef NDEBUG // release build
-	return "assets/";
+	return "assets";
 #else
-	return "C:/Users/olegi/Documents/STUDY/UDEMY/4_LearnCppAndMakeAGameFromScratch/Projects1/LightYears/LightYearsGame/assets/";
+	return "C:/Users/OLEGIS/STUDY/UDEMY/LearnCppAndMakeAGameFromScratch04/Projects1/LightYearsGame/assets/";
 #endif
 }
